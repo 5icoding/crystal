@@ -20,8 +20,9 @@ import subprocess
 #     return text
 
 def get_llm(prompt_text):
+    print(prompt_text)
     # 微软的phi2模型 
-    command = 'ollama run phi '+ prompt_text
+    command = 'ollama run phi '+"'" +prompt_text +"'"
     print(command)
 
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
